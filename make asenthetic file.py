@@ -23,9 +23,9 @@ num_samples = 48000
  
 # The sampling rate of the analog to digital convert
  
-sampling_rate = 24000.0
+sampling_rate = 48000.0
  
-amplitude = 16000
+amplitude = 1000
  
 file = "senthetic feil.wav"
 
@@ -69,4 +69,4 @@ wav_file=wave.open(file, 'w')
 wav_file.setparams((nchannels, sampwidth, int(sampling_rate), nframes, comptype, compname))
 
 for s in combined_signal:
-   wav_file.writeframes(struct.pack('i', int(s*amplitude)))
+   wav_file.writeframes(struct.pack('h', int(s*amplitude)))
